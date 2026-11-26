@@ -31,22 +31,23 @@ PP Phone 是一个持续迭代的个人 AI Agent 项目，致力于探索：**�
 
 PP Phone 采用云端统一 Agent Runtime 架构，将交互渠道、人格配置、长期记忆和模型推理解耦，以支持跨渠道的连续交互。
 
+
 ```mermaid
 flowchart TB
-    U["用户"] --> WX["微信接入层"]
-    WX --> RT["云端 Agent Runtime"]
+    U["用户"]
+    WX["微信文字交互"]
+    RT["云端 Agent Runtime"]
 
-    RT --> P["Persona r1<br/>人格指令与版本管理"]
-    RT --> M["记忆系统<br/>长期记忆与历史原文检索"]
-    RT --> L["LLM API<br/>模型推理"]
+    P["Persona r1<br/>人格指令与版本管理"]
+    M["Memory<br/>长期记忆与原文检索"]
+    L["LLM API<br/>模型推理"]
 
-    L --> RT
-    RT --> WX
+    U --> WX
+    WX --> RT
 
-    subgraph EXP["独立实验中的语音能力"]
-        WEB["Web Voice<br/>语音交互原型"]
-        SIP["SIP / Linphone<br/>来电技术验证"]
-    end
+    RT --> P
+    RT --> M
+    RT --> L
 ```
 
 ### 核心设计思路
