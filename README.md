@@ -1,4 +1,4 @@
-# pp-phone-showcase
+# PP Phone｜个性化 AI 陪伴 Agent
 
 ### 一个拥有长期记忆与连续人格的个性化 AI 陪伴 Agent
 
